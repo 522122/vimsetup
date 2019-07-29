@@ -20,6 +20,8 @@ install_pathogen() {
 install_plugins() {
   git clone https://github.com/neoclide/coc.nvim  --branch release ~/.vim/bundle/coc.nvim
   git clone https://github.com/mattn/emmet-vim ~/.vim/bundle/emmet-vim
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install
   git clone https://github.com/junegunn/fzf ~/.vim/bundle/fzf
   git clone https://github.com/junegunn/fzf.vim ~/.vim/bundle/fzf.vim
   git clone https://github.com/scrooloose/nerdtree ~/.vim/bundle/nerdtree
