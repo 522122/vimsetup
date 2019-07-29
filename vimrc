@@ -6,8 +6,11 @@ colorscheme paramount
 filetype plugin indent on
 
 let g:airline_theme='bubblegum'
-let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+
+set enc=utf-8
+set guifont=Lucida_Console:h10:cANSI
+set guifontwide=Lucida_Console:h12
 
 set hlsearch
 set cursorline
