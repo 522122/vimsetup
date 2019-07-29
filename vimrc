@@ -1,5 +1,6 @@
 execute pathogen#infect()
 " theme
+set background=dark
 colorscheme paramount
 
 filetype plugin indent on
