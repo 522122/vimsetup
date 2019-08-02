@@ -18,6 +18,7 @@ set hlsearch
 set cursorline
 set wildmenu
 set incsearch
+set cmdheight=2
 syntax on
 set number
 set sw=2

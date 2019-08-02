@@ -26,15 +26,8 @@ install_plugins() {
   git clone https://github.com/sheerun/vim-polyglot ~/.vim/bundle/vim-polyglot
   git clone https://github.com/airblade/vim-gitgutter ~/.vim/bundle/vim-gitgutter
   git clone https://github.com/ap/vim-css-color ~/.vim/bundle/vim-css-color
-  git clone https://github.com/prettier/vim-prettier ~/.vim/bundle/vim-prettier
-  git clone https://github.com/flazz/vim-colorschemes.git ~/.vim/bundle/colorschemes
-  git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
-}
-
-install_theme() {
-  git clone --depth=1 https://github.com/tomasiser/vim-code-dark.git ~/vim-code-dark && 
-  rm -rf ~/vim-code-dark/.git ~/vim-code-dark/LICENSE.md ~/vim-code-dark/README.md ~/vim-code-dark/base16 && 
-  cp -r ~/vim-code-dark/* ~/.vim/ && rm -rf ~/vim-code-dark
+  git clone https://github.com/tpope/vim-surround.git ~/.vim/bundle/vim-surround
+  git clone https://github.com/tomasiser/vim-code-dark.git ~/.vim/bundle/vim-code-dark
 }
 
 remove_plugins() {
@@ -51,7 +44,6 @@ install_all() {
   install_pathogen
   install_plugins
   install_configs
-  install_theme
 }
 
 while [ "$option" != "5" ]; do
