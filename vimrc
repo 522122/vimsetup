@@ -34,8 +34,7 @@ nnoremap <C-Left>	  :bprevious<CR>
 nnoremap <C-Right>	:bnextt<CR>
 nnoremap <C-t>	  	:tabnew<CR>
 nnoremap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bprevious<CR>
-nnoremap <C-Tab> :bd<CR>
+nnoremap <S-Tab> :bd<CR>
 
 nnoremap <C-p> :Files<CR>
 " move lines
@@ -46,7 +45,9 @@ nnoremap <C-y> :y *<CR>
 
 let g:user_emmet_leader_key=','
 
+"run for css files
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+"usually runs automatically for js files
 command! -nargs=0 Eslint :CocCommand eslint.executeAutofix
 
 " use <tab> for trigger completion and navigate to the next complete item
@@ -60,7 +61,3 @@ inoremap <silent><expr> <Tab>
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 
-"let g:prettier#autoformat = 0
-"autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
-
-execute pathogen#infect()

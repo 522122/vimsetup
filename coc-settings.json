@@ -1,8 +1,15 @@
 {
   "eslint.enable": true,
+  "eslint.autoFixOnSave": true,
   "eslint.filetypes": [
     "javascript",
     "javascriptreact",
     "vuejs"
+  ],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "scss",
+    "css",
+    "Markdown",
+    "html"
   ]
 }
