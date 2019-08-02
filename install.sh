@@ -3,12 +3,7 @@
 option=""
 
 print_menu() {
-  echo "1. Install all"
-  echo "1F Install all force, clean bundle " 
-  echo "2. Install pathogen"
-  echo "3. Install plugins"
-  echo "3F Install plugins, clean bundle"
-  echo "4. Install .vimrc"
+  echo "1. Install"
   echo "5. Exit"
 }
 
@@ -36,24 +31,27 @@ install_plugins() {
   git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
 }
 
+install_theme() {
+  git clone --depth=1 https://github.com/tomasiser/vim-code-dark.git ~/vim-code-dark && 
+  rm -rf ~/vim-code-dark/.git ~/vim-code-dark/LICENSE.md ~/vim-code-dark/README.md ~/vim-code-dark/base16 && 
+  cp -r ~/vim-code-dark/* ~/.vim/ && rm -rf ~/vim-code-dark
+}
+
 remove_plugins() {
   rm -rf ~/.vim/bundle
 }
 
-install_vimrc() {
+install_configs() {
   cat vimrc > ~/.vimrc
+  cat coc-settings.json > ~/.vim/coc-settings.json
 }
 
-install_colors() {
-  mkdir ~/.vim/colors 2>/dev/null
-  cat paramount.vim > ~/.vim/colors/paramount.vim
-}
 
 install_all() {
   install_pathogen
   install_plugins
-  install_vimrc
-  install_colors
+  install_configs
+  install_theme
 }
 
 while [ "$option" != "5" ]; do
@@ -62,34 +60,8 @@ while [ "$option" != "5" ]; do
   read option
 
   if [ "$option" == "1" ]; then
-    install_all
-    echo "Done"
-  fi
-
-  if [ "$option" == "1F" ]; then
     remove_plugins
     install_all
-    echo "Done"
-  fi
-
-  if [ "$option" == "2" ]; then
-    install_pathogen
-    echo "Done"
-  fi
-
-  if [ "$option" == "3" ]; then
-    install_plugins
-    echo "Done"
-  fi
-
-  if [ "$option" == "3F" ]; then
-    remove_plugins
-    install_plugins
-    echo "Done"
-  fi
-
-  if [ "$option" == "4" ]; then
-    install_vimrc
     echo "Done"
   fi
 

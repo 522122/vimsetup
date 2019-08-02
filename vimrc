@@ -1,13 +1,12 @@
 execute pathogen#infect()
 " theme
-colorscheme breezy
-set background=light
+colorscheme codedark
 set termguicolors
 
 
 filetype plugin indent on
 
-let g:airline_theme='breezy'
+let g:airline_theme='codedark'
 "let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
@@ -61,3 +60,4 @@ inoremap <silent><expr> <Tab>
 "let g:prettier#autoformat = 0
 "autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 
+execute pathogen#infect()
