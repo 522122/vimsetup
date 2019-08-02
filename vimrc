@@ -29,10 +29,12 @@ set backspace=indent,eol,start
 nnoremap <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 "navigating tabs
-nnoremap <C-Left>	  :tabprevious<CR>
-nnoremap <C-Right>	:tabnext<CR>
+nnoremap <C-Left>	  :bprevious<CR>
+nnoremap <C-Right>	:bnextt<CR>
 nnoremap <C-t>	  	:tabnew<CR>
-"nnoremap <C-q> :q<CR>
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+nnoremap <C-Tab> :bd<CR>
 
 nnoremap <C-p> :Files<CR>
 " move lines
