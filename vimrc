@@ -15,9 +15,9 @@ set guifont=Lucida_Console:h10:cANSI
 set guifontwide=Lucida_Console:h12
 
 set hlsearch
+set incsearch
 set cursorline
 set wildmenu
-set incsearch
 set cmdheight=2
 syntax on
 set number
@@ -26,6 +26,11 @@ set ts=2
 set sts=2
 set et     "expand tabs to spaces
 set backspace=indent,eol,start
+set autoindent
+set smartindent
+
+set vb
+set t_vb=
 
 nnoremap <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
@@ -56,8 +61,7 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
 
+" Use `[c` and `]c` to navigate diagnostics
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
