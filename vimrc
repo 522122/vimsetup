@@ -20,6 +20,7 @@ set cursorline
 set wildmenu
 set cmdheight=2
 syntax on
+autocmd BufEnter * :syntax sync fromstart
 set number
 set sw=2
 set ts=2
@@ -28,6 +29,7 @@ set et     "expand tabs to spaces
 set backspace=indent,eol,start
 set autoindent
 set smartindent
+set clipboard=unnamed
 
 set vb
 set t_vb=
